@@ -1,0 +1,30 @@
+
+
+
+
+body{
+    background-color: grey;
+}
+
+
+.main-body{
+    background-color: white;
+    display: flex;
+    height: 100rem;
+
+}
+
+.primary-body{
+    width: 75%;
+}
+
+.secondary-body{
+    background-color: yellow;
+    width: 25%;
+    height: 100%;
+}
+
+
+
+
+
