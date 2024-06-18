@@ -11,7 +11,7 @@ const Calculator = () => {
 
   const [result, setResult] = useState(0);
 
-  const [extra, setExtra] = useState(0);
+  const [extra, setExtra] = useState(500);
 
   const calculateInterest = () => {
     const amount =
@@ -30,64 +30,70 @@ const Calculator = () => {
 
   return (
     <>
+      <h2 className="result">Compound Interest Calculator</h2>
       <div>
-        <h2>Compound Interest Calculator</h2>
-
-        <div>
+        <div className="input-row">
           <label>Principal:</label>
 
           <input
+            className="input-fields"
             type="text"
             value={principal}
             onChange={(e) => setPrincipal(+e.target.value)}
           />
         </div>
-        <div>
-          <label>Additonal contributions each year</label>
+        <div className="input-row">
+          <label>Yearly contribution</label>
 
           <input
+            className="input-fields"
             type="text"
             value={extra}
             onChange={(e) => setExtra(+e.target.value)}
           />
         </div>
 
-        <div>
+        <div className="input-row">
           <label>Annual Interest Rate (%):</label>
 
           <input
+            className="input-fields"
             type="text"
             value={rate}
             onChange={(e) => setRate(+e.target.value)}
           />
         </div>
 
-        <div>
+        <div className="input-row">
           <label>Time (years):</label>
 
           <input
+            className="input-fields"
             type="text"
             value={time}
             onChange={(e) => setTime(+e.target.value)}
           />
         </div>
 
-        <div>
+        <div className="input-row">
           <label>Compounds per Year:</label>
 
           <input
+            className="input-fields"
             type="text"
             value={compound}
             onChange={(e) => setCompound(+e.target.value)}
           />
         </div>
 
-        <button onClick={calculateInterest}>Calculate</button>
+        <div className="input-row">
+          <button onClick={calculateInterest}>Calculate</button>
+        </div>
 
-        <div>
-          <h3>Compound Interest:</h3>
+        <div className="result">
+          <h2>Future Value:</h2>
 
-          <p>{result}</p>
+          <h2>{result}</h2>
         </div>
       </div>
     </>

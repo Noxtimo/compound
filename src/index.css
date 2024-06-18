@@ -3,25 +3,102 @@
 
 
 body{
-    background-color: grey;
+    background-color: rgb(66, 66, 66);
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 3%;
+    padding-top: 3%;
 }
 
+*{
+    font-family: sans-serif;
+}
+
+h1{
+    font-size: 2.5vw;
+}
+
+h2{
+    font-size: 2vw;
+}
+
+p, label{
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+button{
+    background-color: greenyellow;
+
+
+}
 
 .main-body{
-    background-color: white;
+    background-color: #f2f2f2;
     display: flex;
     height: 100rem;
+    padding-left: 5%;
+
 
 }
 
 .primary-body{
     width: 75%;
+    display: flex;
+    flex-direction: column;
 }
 
 .secondary-body{
     background-color: yellow;
     width: 25%;
     height: 100%;
+}
+
+
+.input-row{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+.input-fields{
+    width: 30%;
+    height: 5%;
+}
+
+
+.explanation{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    padding: 2%;
+}
+
+
+.explanation h1{
+    color: rgb(52, 18, 226);
+}
+
+.result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    background-color: rgb(250, 250, 202);
+    border-radius: 10px;
+    padding: 2%;
+
+}
+
+
+@media screen and (max-width: 700px){
+    label, p{
+        font-size: 0.5rem;
+    }
+
+    
 }
 
 

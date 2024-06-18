@@ -1,4 +1,5 @@
 import Calculator from "./components/Calculator";
+import Explanation from "./components/Explanation";
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
@@ -20,6 +21,7 @@ const App = () => {
   return (
     <div className="main-body">
       <div className="primary-body">
+        <Explanation />
         <Calculator />
       </div>
       <div className="secondary-body"></div>
