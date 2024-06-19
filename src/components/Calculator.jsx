@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-
+import { Line } from "react-chartjs-2";
+import {
+  CategoryScale,
+  Chart,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Legend,
+} from "chart.js";
+Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Legend);
 const Calculator = () => {
   const [principal, setPrincipal] = useState(5000);
 
@@ -12,6 +21,21 @@ const Calculator = () => {
   const [result, setResult] = useState(0);
 
   const [extra, setExtra] = useState(500);
+
+  const compoundInterst = [];
+  compoundInterst.push((principal + extra) * (1 + rate / 100));
+  const initialInvestment = [];
+  initialInvestment.push(principal + extra);
+
+  for (let i = 0; i < time; i++) {
+    var lastElementInInitialInvestmentArray =
+      initialInvestment[initialInvestment.length - 1];
+    initialInvestment.push(lastElementInInitialInvestmentArray + extra);
+
+    compoundInterst.push(
+      (compoundInterst[compoundInterst.length - 1] + extra) * (1 + rate / 100)
+    );
+  }
 
   const calculateInterest = () => {
     const amount =
@@ -27,6 +51,35 @@ const Calculator = () => {
 
     setResult(totalAmount.toFixed(2));
   };
+
+  const generateCountdownArray = (num) => {
+    const array = [];
+    for (let i = 0; i < num; i++) {
+      array.push(i);
+    }
+    return array;
+  };
+
+  const data = {
+    labels: [...generateCountdownArray(time)],
+    datasets: [
+      {
+        label: "Initial Investment",
+        data: [0, ...initialInvestment],
+        fill: true,
+        backgroundColor: "rgba(75,192,192,0.2)",
+        borderColor: "rgba(75,192,192,1)",
+      },
+      {
+        label: "Compounded Investment",
+        data: [0, ...compoundInterst],
+        fill: false,
+        borderColor: "green",
+      },
+    ],
+  };
+
+  console.log(compoundInterst);
 
   return (
     <>
@@ -96,6 +149,19 @@ const Calculator = () => {
           <h2>{result}</h2>
         </div>
       </div>
+      <Line
+        data={data}
+        className="my-chart"
+        datasetIdKey="id"
+        options={{
+          scales: {
+            y: {
+              min: 0,
+              max: result * 2,
+            },
+          },
+        }}
+      />
     </>
   );
 };
