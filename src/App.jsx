@@ -62,16 +62,16 @@ const App = () => {
               time periods (years). This gives a combined figure for principal
               and compound interest.
             </p>
-            <div className="formula">
-              <p>A = P(1+r/n)^nt</p>
-              <ul>
-                <li>A = the future value of the investment</li>
-                <li>P = the principal balance</li>
-                <li>r = the annual interest rate (decimal)</li>
-                <li>n = number of times interest is compounded per year</li>
-                <li>t = the time in years</li>
-              </ul>
-            </div>
+          </div>
+          <div className="formula">
+            <p>A = P(1+r/n)^nt</p>
+            <ul>
+              <li>A = the future value of the investment</li>
+              <li>P = the principal balance</li>
+              <li>r = the annual interest rate (decimal)</li>
+              <li>n = number of times interest is compounded per year</li>
+              <li>t = the time in years</li>
+            </ul>
           </div>
         </div>
       </div>

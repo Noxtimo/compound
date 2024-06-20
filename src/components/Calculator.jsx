@@ -64,8 +64,31 @@ const Calculator = () => {
     ],
   };
 
-  console.log(time);
+  const handleSetTime = (e) => {
+    const value = +e.target.value;
+    if (value >= 1 && value <= 100) {
+      setTime(value);
+    } else {
+      // Optionally handle the case where value is outside the range
+      // You may choose to ignore or set a default value within the range
+      setTime(1); // Setting time to 1 if value is less than 1 or greater than 100
+    }
+  };
 
+  const allowedKeys = [
+    "Backspace",
+    "Delete",
+    "ArrowLeft",
+    "ArrowRight",
+    "ArrowUp",
+    "ArrowDown",
+  ];
+
+  const handleKeyDown = (event) => {
+    if (!/[0-9]/.test(event.key) && !allowedKeys.includes(event.key)) {
+      event.preventDefault();
+    }
+  };
   return (
     <>
       <h2 className="result">Compound Interest Calculator</h2>
@@ -74,6 +97,7 @@ const Calculator = () => {
           <label>Principal:</label>
 
           <input
+            onKeyDown={handleKeyDown}
             className="input-fields"
             type="text"
             value={principal}
@@ -84,6 +108,7 @@ const Calculator = () => {
           <label>Yearly contribution</label>
 
           <input
+            onKeyDown={handleKeyDown}
             className="input-fields"
             type="text"
             value={extra}
@@ -95,6 +120,7 @@ const Calculator = () => {
           <label>Annual Interest Rate (%):</label>
 
           <input
+            onKeyDown={handleKeyDown}
             className="input-fields"
             type="text"
             value={rate}
@@ -108,8 +134,9 @@ const Calculator = () => {
           <input
             className="input-fields"
             type="number"
+            onKeyDown={handleKeyDown}
             value={time}
-            onChange={(e) => setTime(+e.target.value)}
+            onChange={handleSetTime}
           />
         </div>
 
@@ -117,6 +144,7 @@ const Calculator = () => {
           <label>Compounds per Year:</label>
 
           <input
+            onKeyDown={handleKeyDown}
             className="input-fields"
             type="text"
             value={compound}
