@@ -9,7 +9,7 @@ Currently, two official plugins are available:
 
 # To do list
 
-- Add a graph
+- Fix bug in graph so it loads correctly
 - Add footer
 - Add header
 - Add text for explaining compound interest

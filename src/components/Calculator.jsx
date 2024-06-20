@@ -37,21 +37,6 @@ const Calculator = () => {
     );
   }
 
-  const calculateInterest = () => {
-    const amount =
-      principal * Math.pow(1 + rate / 100 / compound, compound * time);
-
-    let annualContributionAmount = 0;
-    for (let i = 0; i < time; i++) {
-      annualContributionAmount +=
-        extra * Math.pow(1 + rate / 100 / compound, compound * (time - i));
-    }
-
-    const totalAmount = amount + annualContributionAmount;
-
-    setResult(totalAmount.toFixed(2));
-  };
-
   const generateCountdownArray = (num) => {
     const array = [];
     for (let i = 0; i < num; i++) {
@@ -61,7 +46,7 @@ const Calculator = () => {
   };
 
   const data = {
-    labels: [...generateCountdownArray(time)],
+    labels: [...generateCountdownArray(time + 1)],
     datasets: [
       {
         label: "Initial Investment",
@@ -79,7 +64,7 @@ const Calculator = () => {
     ],
   };
 
-  console.log(compoundInterst);
+  console.log(time);
 
   return (
     <>
@@ -122,7 +107,7 @@ const Calculator = () => {
 
           <input
             className="input-fields"
-            type="text"
+            type="number"
             value={time}
             onChange={(e) => setTime(+e.target.value)}
           />
@@ -139,14 +124,12 @@ const Calculator = () => {
           />
         </div>
 
-        <div className="input-row">
-          <button onClick={calculateInterest}>Calculate</button>
-        </div>
+        <div className="input-row"></div>
 
         <div className="result">
           <h2>Future Value:</h2>
 
-          <h2>{result}</h2>
+          <h2>{compoundInterst[compoundInterst.length - 2].toFixed(2)}</h2>
         </div>
       </div>
       <Line
@@ -157,7 +140,9 @@ const Calculator = () => {
           scales: {
             y: {
               min: 0,
-              max: result * 2,
+              max:
+                Math.round(compoundInterst[compoundInterst.length - 1] / 1000) *
+                1000,
             },
           },
         }}

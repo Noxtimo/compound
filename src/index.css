@@ -15,8 +15,10 @@ body{
 }
 
 h1{
-    font-size: 2.5vw;
+    font-size: 2vw;
 }
+
+
 
 h2{
     font-size: 2vw;
@@ -36,7 +38,7 @@ button{
 .main-body{
     background-color: #f2f2f2;
     display: flex;
-    height: 100rem;
+    height: 300rem;
     padding-left: 5%;
 
 
@@ -49,7 +51,7 @@ button{
 }
 
 .secondary-body{
-    background-color: yellow;
+    background-color: rgb(248, 248, 233);
     width: 25%;
     height: 100%;
 }
@@ -108,4 +110,35 @@ button{
 
 
 
+
+.readings{
+    margin-top: 5%;
+    width: 75%;
+}
+
+.readings div{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.readings h1{
+    color: rgb(52, 18, 226);
+
+}
+
+.first-image{
+    width: 100%;
+
+}
+
+.formula{
+    background-color: rgb(49, 235, 49);
+    border-radius: 15px;
+    padding: 5%;
+    border: 5px solid green;
+}
 
