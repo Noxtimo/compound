@@ -64,17 +64,6 @@ const Calculator = () => {
     ],
   };
 
-  const handleSetTime = (e) => {
-    const value = +e.target.value;
-    if (value >= 1 && value <= 100) {
-      setTime(value);
-    } else {
-      // Optionally handle the case where value is outside the range
-      // You may choose to ignore or set a default value within the range
-      setTime(1); // Setting time to 1 if value is less than 1 or greater than 100
-    }
-  };
-
   const allowedKeys = [
     "Backspace",
     "Delete",
@@ -117,7 +106,7 @@ const Calculator = () => {
         </div>
 
         <div className="input-row">
-          <label>Annual Interest Rate (%):</label>
+          <label>Interest Rate (%):</label>
 
           <input
             onKeyDown={handleKeyDown}
@@ -133,10 +122,10 @@ const Calculator = () => {
 
           <input
             className="input-fields"
-            type="number"
+            type="text"
             onKeyDown={handleKeyDown}
             value={time}
-            onChange={handleSetTime}
+            onChange={(e) => setTime(+e.target.value)}
           />
         </div>
 
@@ -157,7 +146,11 @@ const Calculator = () => {
         <div className="result">
           <h2>Future Value:</h2>
 
-          <h2>{compoundInterst[compoundInterst.length - 2].toFixed(2)}</h2>
+          <h2>
+            {time < 1
+              ? initialInvestment[initialInvestment.length - 1].toFixed(2)
+              : compoundInterst[compoundInterst.length - 2].toFixed(2)}
+          </h2>
         </div>
       </div>
       <Line

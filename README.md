@@ -9,7 +9,9 @@ Currently, two official plugins are available:
 
 # To do list
 
-- Fix bug in graph so it loads correctly
+-fix the chart so that it also shows on smaller screens
+
+- Add currency markers that change when currency is changed
+
 - Add footer
-- Add header
-- Add text for explaining compound interest
+- Make the text explaning compound interest look visually better
