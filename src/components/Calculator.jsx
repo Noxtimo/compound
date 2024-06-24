@@ -27,6 +27,12 @@ const Calculator = () => {
   const initialInvestment = [];
   initialInvestment.push(principal + extra);
 
+  const handleMaxTime = (e) => {
+    if (e.target.value <= 42) {
+      setTime(e.target.value);
+    }
+  };
+
   for (let i = 0; i < time; i++) {
     var lastElementInInitialInvestmentArray =
       initialInvestment[initialInvestment.length - 1];
@@ -46,7 +52,7 @@ const Calculator = () => {
   };
 
   const data = {
-    labels: [...generateCountdownArray(time + 1)],
+    labels: [...generateCountdownArray(parseInt(time) + 1)],
     datasets: [
       {
         label: "Initial Investment",
@@ -64,6 +70,11 @@ const Calculator = () => {
     ],
   };
 
+  const color = () => {
+    return compoundInterst[compoundInterst.length - 1] < 0 ? "red" : "green";
+  };
+
+  console.log(color());
   const allowedKeys = [
     "Backspace",
     "Delete",
@@ -90,6 +101,7 @@ const Calculator = () => {
             className="input-fields"
             type="text"
             value={principal}
+            maxLength="6"
             onChange={(e) => setPrincipal(+e.target.value)}
           />
         </div>
@@ -101,6 +113,7 @@ const Calculator = () => {
             className="input-fields"
             type="text"
             value={extra}
+            maxLength="5"
             onChange={(e) => setExtra(+e.target.value)}
           />
         </div>
@@ -112,6 +125,7 @@ const Calculator = () => {
             onKeyDown={handleKeyDown}
             className="input-fields"
             type="text"
+            maxLength="2"
             value={rate}
             onChange={(e) => setRate(+e.target.value)}
           />
@@ -123,9 +137,10 @@ const Calculator = () => {
           <input
             className="input-fields"
             type="text"
+            maxLength="2"
             onKeyDown={handleKeyDown}
             value={time}
-            onChange={(e) => setTime(+e.target.value)}
+            onChange={handleMaxTime}
           />
         </div>
 
@@ -146,7 +161,7 @@ const Calculator = () => {
         <div className="result">
           <h2>Future Value:</h2>
 
-          <h2>
+          <h2 style={{ color: "green" }}>
             {time < 1
               ? initialInvestment[initialInvestment.length - 1].toFixed(2)
               : compoundInterst[compoundInterst.length - 2].toFixed(2)}

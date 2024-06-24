@@ -5,6 +5,16 @@
 body{
     padding-left: 10%;
     margin: 0;
+    background-color: grey;
+}
+
+footer{
+    background-color: white;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid black;
 }
 
 *{
@@ -24,8 +34,18 @@ h2{
 p, label{
     font-size: 1rem;
     font-weight: lighter;
+    line-height: 1.25em;
+    text-align: justify;
+    letter-spacing: .03em;
+}
+a{
+    text-decoration: none;
+    color: black;
 }
 
+a:hover{
+    text-decoration: underline;
+}
 button{
     background-color: greenyellow;
 
@@ -37,6 +57,8 @@ button{
     display: flex;
     height: 300rem;
     width: 75%;
+    background-color: white;
+    justify-content: center;
 
 
 }
@@ -45,6 +67,7 @@ button{
     width: 50%;
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
 
 .secondary-body{
@@ -72,8 +95,6 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 70%;
-    padding: 2%;
 }
 
 
@@ -109,15 +130,19 @@ button{
 
 
 .readings{
-    margin-top: 5%;
-    width: 75%;
+    width: 80%;
+    padding: 2%;
 }
 
 .readings div{
-    margin-top: 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    margin-left: 10px;
+    margin-bottom: 5%;
+    border-bottom: 1px solid black;
+    padding-bottom: 5%;
 
 
 }
@@ -152,6 +177,8 @@ button{
 .nav li {
     list-style: none;
     font-size: clamp(1vw, 1.5vw, 2vw);
+    border-radius: 50px;
+    padding: 5px;
 
   }
   
@@ -177,3 +204,29 @@ button{
 
 }
 
+blockquote{
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote::before{
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+  }
+
+
+.einstain{
+    width: 80%;
+    margin: 1.5em 10px;
+}

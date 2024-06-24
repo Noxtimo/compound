@@ -1,25 +1,27 @@
+import { Outlet, Link } from "react-router-dom";
+
 const Header = () => {
   return (
-    <div class="nav">
+    <div className="nav">
       <li>
-        <a href="#" class="nav-link">
+        <Link to="/" className="nav-link">
           Home
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#" class="nav-link">
-          <em>Act Now!</em>
-        </a>
+        <Link to="/About" className="nav-link">
+          <em>About</em>
+        </Link>
       </li>
       <li>
-        <a href="#" class="nav-link">
+        <Link to="/Faq" className="nav-link">
           FAQ
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="#" class="nav-link">
+        <Link to="/Contact" className="nav-link">
           Contact Us
-        </a>
+        </Link>
       </li>
     </div>
   );
