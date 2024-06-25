@@ -60,7 +60,7 @@ const Home = () => {
                 the power of the number of time periods (years). This gives a
                 combined figure for principal and compound interest.
               </p>
-              <div className="formula">
+              <label className="formula">
                 <p>A = P(1+r/n)^nt</p>
                 <ul>
                   <li>A = the future value of the investment</li>
@@ -69,7 +69,7 @@ const Home = () => {
                   <li>n = number of times interest is compounded per year</li>
                   <li>t = the time in years</li>
                 </ul>
-              </div>
+              </label>
             </div>
             <div>
               <blockquote className="quote">

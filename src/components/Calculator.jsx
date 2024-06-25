@@ -22,6 +22,8 @@ const Calculator = () => {
 
   const [extra, setExtra] = useState(500);
 
+  const [currency, setCurrency] = useState("");
+
   const compoundInterst = [];
   compoundInterst.push((principal + extra) * (1 + rate / 100));
   const initialInvestment = [];
@@ -70,11 +72,6 @@ const Calculator = () => {
     ],
   };
 
-  const color = () => {
-    return compoundInterst[compoundInterst.length - 1] < 0 ? "red" : "green";
-  };
-
-  console.log(color());
   const allowedKeys = [
     "Backspace",
     "Delete",
@@ -89,37 +86,85 @@ const Calculator = () => {
       event.preventDefault();
     }
   };
+
+  const handleCurrencyChange = (e) => {
+    const value = e.target.value;
+
+    setCurrency(value);
+  };
   return (
     <>
       <h2 className="result">Compound Interest Calculator</h2>
       <div>
         <div className="input-row">
+          <div className="currency-container">
+            <input
+              className="currency"
+              type="radio"
+              name="currency"
+              value="$"
+              onChange={handleCurrencyChange}
+            />
+            $
+            <input
+              className="currency"
+              type="radio"
+              name="currency"
+              value="£"
+              onChange={handleCurrencyChange}
+            />
+            £
+            <input
+              className="currency"
+              type="radio"
+              name="currency"
+              value="€"
+              onChange={handleCurrencyChange}
+            />
+            €
+            <input
+              className="currency"
+              type="radio"
+              name="currency"
+              value="¥"
+              onChange={handleCurrencyChange}
+            />
+            ¥
+          </div>
+        </div>
+        <div className="input-row">
           <label>Principal:</label>
 
-          <input
-            onKeyDown={handleKeyDown}
-            className="input-fields"
-            type="text"
-            value={principal}
-            maxLength="6"
-            onChange={(e) => setPrincipal(+e.target.value)}
-          />
+          <div className="currency-div">
+            <span>{currency}</span>
+            <input
+              onKeyDown={handleKeyDown}
+              className="currency-field"
+              type="text"
+              value={principal}
+              maxLength="6"
+              onChange={(e) => setPrincipal(+e.target.value)}
+            />
+          </div>
         </div>
         <div className="input-row">
           <label>Yearly contribution</label>
 
-          <input
-            onKeyDown={handleKeyDown}
-            className="input-fields"
-            type="text"
-            value={extra}
-            maxLength="5"
-            onChange={(e) => setExtra(+e.target.value)}
-          />
+          <div className="currency-div">
+            <span>{currency}</span>
+            <input
+              onKeyDown={handleKeyDown}
+              className="currency-field"
+              type="text"
+              value={extra}
+              maxLength="5"
+              onChange={(e) => setExtra(+e.target.value)}
+            />
+          </div>
         </div>
 
         <div className="input-row">
-          <label>Interest Rate (%):</label>
+          <label>Interest Rate %</label>
 
           <input
             onKeyDown={handleKeyDown}
@@ -144,27 +189,22 @@ const Calculator = () => {
           />
         </div>
 
-        <div className="input-row">
-          <label>Compounds per Year:</label>
-
-          <input
-            onKeyDown={handleKeyDown}
-            className="input-fields"
-            type="text"
-            value={compound}
-            onChange={(e) => setCompound(+e.target.value)}
-          />
-        </div>
-
         <div className="input-row"></div>
 
         <div className="result">
-          <h2>Future Value:</h2>
+          <h2>Future Value: </h2>
 
           <h2 style={{ color: "green" }}>
+            <span style={{ marginRight: "3%" }}>{currency}</span>
             {time < 1
-              ? initialInvestment[initialInvestment.length - 1].toFixed(2)
-              : compoundInterst[compoundInterst.length - 2].toFixed(2)}
+              ? initialInvestment[initialInvestment.length - 1]
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+              : compoundInterst[compoundInterst.length - 2]
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
           </h2>
         </div>
       </div>

@@ -12,6 +12,7 @@ footer{
     background-color: white;
     width: 75%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border-top: 1px solid black;
@@ -32,7 +33,7 @@ h2{
 }
 
 p, label{
-    font-size: 1rem;
+    font-size: 0.7em;
     font-weight: lighter;
     line-height: 1.25em;
     text-align: justify;
@@ -43,9 +44,7 @@ a{
     color: black;
 }
 
-a:hover{
-    text-decoration: underline;
-}
+
 button{
     background-color: greenyellow;
 
@@ -158,10 +157,9 @@ button{
 }
 
 .formula{
-    background-color: rgb(49, 235, 49);
-    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
     padding: 5%;
-    border: 5px solid green;
+    border-left: 20px solid rgb(78, 244, 78);
 }
 
 
@@ -180,6 +178,7 @@ button{
     border-radius: 50px;
     padding: 5px;
 
+
   }
   
   /* :hover allows you change the background color of the nav items when you mouse over them. Play around with the transition value to change the speed of the hover transition. */
@@ -194,6 +193,7 @@ button{
   .nav-link {
     color: #fff;
     text-decoration: none;
+
   }
 
 
@@ -229,4 +229,56 @@ blockquote p {
 .einstain{
     width: 80%;
     margin: 1.5em 10px;
+}
+
+
+.currency-div{
+    display: flex;
+    border: 1px solid black;
+    padding: 0;
+    max-width: 45%;
+
+
+}
+
+.currency-div span{
+    background-color: rgb(223, 215, 215);
+    width: 12%;
+    text-align: center;
+    border-right: 1px solid black;
+}
+
+
+.currency-field{
+    width: 88%;
+    border: white;
+}
+
+
+.currency-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+
+
+
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    padding-bottom: 1%;
+}
+
+.faq-body{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.faq-div{
+    margin-bottom: 5%;
 }

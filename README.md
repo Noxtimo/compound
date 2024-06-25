@@ -9,9 +9,4 @@ Currently, two official plugins are available:
 
 # To do list
 
--fix the chart so that it also shows on smaller screens
-
-- Add currency markers that change when currency is changed
-
-- Add footer
-- Make the text explaning compound interest look visually better
+- Fill out all the of the pages
