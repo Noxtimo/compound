@@ -1,62 +1,77 @@
 import Calculator from "../components/Calculator";
-
 import snowball from "../images/snowball.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import SocialIcons from "../components/SocialIcons";
 
 const About = () => {
   return (
     <div className="container">
       <Header />
-      <div className="main-body">
+      <div className="main-body-not-home">
         <div className="readings">
           <div>
-            <div>
-              {" "}
-              <h1>What is compound interest</h1>
-              <p>
-                {" "}
-                The concept of compound interest, or 'interest on interest', is
-                that accumulated interest is added back onto your principal sum,
-                with future interest being calculated on both the original
-                principal and the already-accrued interest.{" "}
-              </p>
-              <p>
-                This compounding effect causes investments to grow faster over
-                time, much like a snowball gaining size as it rolls downhill
-                When you combine the power of interest compounding with regular,
-                consistent investing over a sustained period of time, you end up
-                with a highly effective growth strategy for accelerating the
-                long-term value of your savings or investments.
-              </p>
-            </div>
-
-            <img src={snowball} className="first-image" />
-          </div>
-          <div>
-            <h1>How compound interest is calculated</h1>
+            <h1>About This Website</h1>
             <p>
-              Compound interest is calculated using the compound interest
-              formula:{" "}
-              <p style={{ color: "green", width: "20%", fontWeight: "bold" }}>
-                {" "}
-                A = P(1+r/n)^nt.
-              </p>{" "}
-              For annual compounding, multiply the initial balance by one plus
-              your annual interest rate raised to the power of the number of
-              time periods (years). This gives a combined figure for principal
-              and compound interest.
+              Welcome to my website dedicated to compound interest—a powerful
+              concept in finance that can significantly impact your financial
+              growth over time. At [Your Website Name], my mission is to
+              demystify compound interest, empower you with knowledge, and
+              provide practical tools to enhance your financial decision-making.
+            </p>
+            <p>
+              My intention is to serve as a comprehensive resource for
+              individuals at all stages of their financial journey. Whether
+              you're just starting to explore savings options, planning for
+              retirement, or looking to optimize your investment strategies, we
+              aim to provide clear explanations and actionable insights.
+            </p>
+            <h2>What We Offer:</h2>
+            <ul>
+              <li>
+                <strong>Educational Content:</strong> Dive into articles and
+                guides that explain the fundamentals of compound interest, its
+                benefits, and how it compares to other financial concepts like
+                simple interest.
+              </li>
+              <li>
+                <strong>Interactive Tools:</strong> Use my calculators to
+                visualize how compound interest can grow your savings or
+                investments over time. Experiment with different scenarios to
+                see the impact of varying interest rates, compounding
+                frequencies, and investment durations.
+              </li>
+              <li>
+                <strong>Practical Tips:</strong> Discover strategies to maximize
+                the benefits of compound interest in real-world situations.
+                Learn about effective savings habits, investment
+                diversification, and long-term financial planning.
+              </li>
+              <li>
+                <strong>Community Support:</strong> Join discussions and connect
+                with others who share your interest in financial literacy and
+                wealth-building strategies. Share your experiences, ask
+                questions, and learn from a supportive community.
+              </li>
+            </ul>
+            <p>
+              My goal is to equip you with the knowledge and tools needed to
+              harness the power of compound interest effectively. By
+              understanding how compounding works and incorporating it into your
+              financial strategy, you can achieve your financial goals more
+              efficiently and build long-term wealth.
+            </p>
+            <p>
+              Thank you for visiting my website. We're dedicated to providing
+              valuable resources and insights that empower you to make informed
+              financial decisions and secure your financial future. Explore our
+              site, engage with my content, and embark on a journey towards
+              financial empowerment.
             </p>
           </div>
-          <div className="formula">
-            <p>A = P(1+r/n)^nt</p>
-            <ul>
-              <li>A = the future value of the investment</li>
-              <li>P = the principal balance</li>
-              <li>r = the annual interest rate (decimal)</li>
-              <li>n = number of times interest is compounded per year</li>
-              <li>t = the time in years</li>
-            </ul>
+          <div className="social-media-about">
+            <h1>Be sure to check out my social media.</h1>
+            <SocialIcons />
           </div>
         </div>
       </div>

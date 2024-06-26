@@ -9,4 +9,8 @@ Currently, two official plugins are available:
 
 # To do list
 
-- Fill out all the of the pages
+- Fill out the home page
+- Laucnh on firebase
+- Add final finishing css touches to make it look good
+- Add "total interest earned"
+- Add the api keys into env

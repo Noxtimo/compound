@@ -35,11 +35,7 @@ const Footer = () => {
         >
           <FontAwesomeIcon icon={faGoogle} size="2x" />
         </a>
-        <a
-          href="https://codepen.io/yourusername"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://codepen.io/" target="_blank" rel="noopener noreferrer">
           <FontAwesomeIcon icon={faCodepen} size="2x" />
         </a>
       </div>

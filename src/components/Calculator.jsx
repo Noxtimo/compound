@@ -57,14 +57,14 @@ const Calculator = () => {
     labels: [...generateCountdownArray(parseInt(time) + 1)],
     datasets: [
       {
-        label: "Initial Investment",
+        label: "Initial",
         data: [0, ...initialInvestment],
         fill: true,
         backgroundColor: "rgba(75,192,192,0.2)",
         borderColor: "rgba(75,192,192,1)",
       },
       {
-        label: "Compounded Investment",
+        label: "Compounded",
         data: [0, ...compoundInterst],
         fill: false,
         borderColor: "green",
