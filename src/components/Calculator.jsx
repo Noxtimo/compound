@@ -8,6 +8,7 @@ import {
   LineElement,
   Legend,
 } from "chart.js";
+import { LineChart } from "@mui/x-charts/LineChart";
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Legend);
 const Calculator = () => {
   const [principal, setPrincipal] = useState(5000);
@@ -35,7 +36,7 @@ const Calculator = () => {
     }
   };
 
-  for (let i = 0; i < time; i++) {
+  for (let i = 0; i < time - 1; i++) {
     var lastElementInInitialInvestmentArray =
       initialInvestment[initialInvestment.length - 1];
     initialInvestment.push(lastElementInInitialInvestmentArray + extra);
@@ -51,25 +52,6 @@ const Calculator = () => {
       array.push(i);
     }
     return array;
-  };
-
-  const data = {
-    labels: [...generateCountdownArray(parseInt(time) + 1)],
-    datasets: [
-      {
-        label: "Initial",
-        data: [0, ...initialInvestment],
-        fill: true,
-        backgroundColor: "rgba(75,192,192,0.2)",
-        borderColor: "rgba(75,192,192,1)",
-      },
-      {
-        label: "Compounded",
-        data: [0, ...compoundInterst],
-        fill: false,
-        borderColor: "green",
-      },
-    ],
   };
 
   const allowedKeys = [
@@ -92,6 +74,8 @@ const Calculator = () => {
 
     setCurrency(value);
   };
+
+  console.log([...generateCountdownArray(parseInt(time) + 1)]);
   return (
     <>
       <h2 className="result">Compound Interest Calculator</h2>
@@ -201,28 +185,56 @@ const Calculator = () => {
                   .toFixed(2)
                   .toString()
                   .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
-              : compoundInterst[compoundInterst.length - 2]
+              : compoundInterst[compoundInterst.length - 1]
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
+          </h2>
+        </div>
+        <div className="input-row"></div>
+
+        <div className="result">
+          <h2>Total Interest Earned: </h2>
+
+          <h2 style={{ color: "green" }}>
+            <span style={{ marginRight: "3%" }}>{currency}</span>
+            {time < 1
+              ? (
+                  initialInvestment[initialInvestment.length - 1] -
+                  initialInvestment[initialInvestment.length - 1]
+                )
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
+              : (
+                  compoundInterst[compoundInterst.length - 1] -
+                  initialInvestment[initialInvestment.length - 1]
+                )
                   .toFixed(2)
                   .toString()
                   .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}
           </h2>
         </div>
       </div>
-      <Line
-        data={data}
-        className="my-chart"
-        datasetIdKey="id"
-        options={{
-          scales: {
-            y: {
-              min: 0,
-              max:
-                Math.round(compoundInterst[compoundInterst.length - 1] / 1000) *
-                1000,
-            },
-          },
-        }}
-      />
+      {time > 0 ? (
+        <div>
+          <LineChart
+            height={300}
+            series={[
+              { data: [0, ...initialInvestment], label: "Non-Compound" },
+              { data: [0, ...compoundInterst], label: "Compound" },
+            ]}
+            xAxis={[
+              {
+                scaleType: "point",
+                data: [...generateCountdownArray(parseInt(time) + 1)],
+              },
+            ]}
+          />
+        </div>
+      ) : (
+        <div></div>
+      )}
     </>
   );
 };

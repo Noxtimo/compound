@@ -33,7 +33,7 @@ h2{
 }
 
 p, label{
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: lighter;
     line-height: 1.25em;
     text-align: justify;
@@ -113,7 +113,7 @@ button{
 }
 
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 800px){
     label, p{
         font-size: 0.5rem;
     }
@@ -122,8 +122,9 @@ button{
 }
 
 .my-chart{
-    width: 95% !important;
+
     margin-top: 5%;
+
 }
 
 
@@ -169,24 +170,31 @@ button{
 .nav{
     width: 75%;
     justify-content: space-evenly;
-    background-color: black;
+
+
     display: flex;
     height: 3vw;
     align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 
 .nav li {
     list-style: none;
     font-size: clamp(1vw, 1.5vw, 2vw);
     border-radius: 50px;
-    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 
 
   }
   
   /* :hover allows you change the background color of the nav items when you mouse over them. Play around with the transition value to change the speed of the hover transition. */
   .nav li:hover {
-    background: red;
+    background: rgb(57, 57, 57);
     transition: background .3s;
   }
 
@@ -398,4 +406,4 @@ blockquote p {
     transition: 1s ease;
 
   }
-  
+

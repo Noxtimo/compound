@@ -12,5 +12,5 @@ Currently, two official plugins are available:
 - Fill out the home page
 - Laucnh on firebase
 - Add final finishing css touches to make it look good
-- Add "total interest earned"
+
 - Add the api keys into env
