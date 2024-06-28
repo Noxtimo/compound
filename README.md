@@ -14,3 +14,6 @@ Currently, two official plugins are available:
 - Add final finishing css touches to make it look good
 
 - Add the api keys into env
+- Fix bug with chart overflowing
+- Add login
+- Add stripe

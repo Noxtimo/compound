@@ -12,7 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-
+import SideDraw from "../components/SideDraw";
 const pages = ["About", "Faq", "Contact"];
 const condencedPages = ["Home", "About", "Faq", "Contact"];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -133,6 +133,7 @@ function Header() {
                 </Button>
               ))}
             </Box>
+            <SideDraw />
 
             {/* This is a profile picture and settings if you want to add authentication later as the website grows.
               

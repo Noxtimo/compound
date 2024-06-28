@@ -1,15 +1,7 @@
 import React, { useState } from "react";
-import { Line } from "react-chartjs-2";
-import {
-  CategoryScale,
-  Chart,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Legend,
-} from "chart.js";
+
 import { LineChart } from "@mui/x-charts/LineChart";
-Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Legend);
+
 const Calculator = () => {
   const [principal, setPrincipal] = useState(5000);
 
@@ -75,7 +67,6 @@ const Calculator = () => {
     setCurrency(value);
   };
 
-  console.log([...generateCountdownArray(parseInt(time) + 1)]);
   return (
     <>
       <h2 className="result">Compound Interest Calculator</h2>
@@ -219,7 +210,7 @@ const Calculator = () => {
       {time > 0 ? (
         <div>
           <LineChart
-            height={300}
+            height={400}
             series={[
               { data: [0, ...initialInvestment], label: "Non-Compound" },
               { data: [0, ...compoundInterst], label: "Compound" },

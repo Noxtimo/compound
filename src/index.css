@@ -3,14 +3,13 @@
 
 
 body{
-    padding-left: 10%;
     margin: 0;
-    background-color: grey;
+
 }
 
 footer{
     background-color: white;
-    width: 75%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,26 +53,31 @@ button{
 .main-body{
     margin: 0;
     display: flex;
+    flex-direction: column;
     height: 300rem;
-    width: 75%;
+    width: 100%;
     background-color: white;
-    justify-content: center;
+    align-items: center;
 
 
 }
 
 .primary-body{
-    width: 50%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     background-color: white;
+    margin-bottom: 5%;
+
 }
 
 .secondary-body{
-    background-color: rgb(248, 248, 233);
-    width: 65%;
-    height: 100%;
+    background-color: rgb(255, 255, 255);
+    width: 75%;
+
+
 }
+
 
 
 .input-row{
@@ -130,8 +134,8 @@ button{
 
 
 .readings{
-    width: 80%;
-    padding: 2%;
+    width: 100%;
+
 }
 
 
@@ -141,12 +145,16 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    margin-left: 10px;
+    text-align: center;
     margin-bottom: 5%;
-    border-bottom: 1px solid black;
+
     padding-bottom: 5%;
 
+
+}
+
+.readings div p{
+    width: 100%;
 
 }
 
@@ -161,14 +169,14 @@ button{
 }
 
 .formula{
-    background-color: rgb(255, 255, 255);
     padding: 5%;
     border-left: 20px solid rgb(78, 244, 78);
+    background-color: #ffcd38;
 }
 
 
 .nav{
-    width: 75%;
+    width: 100%;
     justify-content: space-evenly;
 
 
@@ -215,26 +223,7 @@ button{
 
 }
 
-blockquote{
-    background: #f9f9f9;
-    border-left: 10px solid #ccc;
-    margin: 1.5em 10px;
-    padding: 0.5em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
-}
 
-blockquote::before{
-    color: #ccc;
-    content: open-quote;
-    font-size: 4em;
-    line-height: 0.1em;
-    margin-right: 0.25em;
-    vertical-align: -0.4em;
-}
-
-blockquote p {
-    display: inline;
-  }
 
 
 .einstain{
@@ -406,4 +395,16 @@ blockquote p {
     transition: 1s ease;
 
   }
+
+.quotes{
+    display: flex;
+    flex-direction: row !important;
+    height: 100%;
+    margin-bottom: 5%;
+
+}
+
+.quotes div{
+    border-bottom: 1px solid black;
+}
 

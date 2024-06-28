@@ -4,6 +4,7 @@ import snowball from "../images/snowball.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import einstain from "../images/einstain.jpg";
+import Einstain from "../components/Einstain";
 
 const Home = () => {
   return (
@@ -72,10 +73,14 @@ const Home = () => {
               </label>
             </div>
             <div>
-              <blockquote className="quote">
-                <p> Compound interest is the eighth wonder of the world.</p>
-              </blockquote>
-              <img src={einstain} className="einstain" />
+              <h1>Quotes by famous people</h1>
+              <div className="quotes">
+                <Einstain />
+
+                <Einstain />
+
+                <Einstain />
+              </div>
             </div>
             <div>
               {" "}
