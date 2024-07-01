@@ -15,7 +15,7 @@ const Calculator = () => {
 
   const [extra, setExtra] = useState(500);
 
-  const [currency, setCurrency] = useState("");
+  const [currency, setCurrency] = useState("£");
 
   const compoundInterst = [];
   compoundInterst.push((principal + extra) * (1 + rate / 100));

@@ -1,44 +1,84 @@
 import React from "react";
-import { FaGithub, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-
+import {
+  faGithub,
+  faLinkedin,
+  faGoogle,
+  faCodepen,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Typography from "@mui/material/Typography";
 const SocialIcons = () => {
   return (
     <ul className="social-icons">
       <li>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
-          <FaGithub />
-          <span className="social-label">GitHub</span>
-        </a>
+        <Typography
+          component="a"
+          href="https://github.com/noxtimo"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
+          <FontAwesomeIcon icon={faGithub} size="2x" />
+        </Typography>
       </li>
       <li>
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Typography
+          component="a"
+          href="https://github.com/noxtimo"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
         >
-          <FaInstagram />
-          <span className="social-label">Instagram</span>
-        </a>
+          <FontAwesomeIcon icon={faLinkedin} size="2x" />
+        </Typography>
       </li>
       <li>
-        <a
-          href="https://www.linkedin.com/in/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Typography
+          component="a"
+          href="https://github.com/noxtimo"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
         >
-          <FaLinkedinIn />
-          <span className="social-label">LinkedIn</span>
-        </a>
+          <FontAwesomeIcon icon={faInstagram} size="2x" />
+        </Typography>
       </li>
       <li>
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Typography
+          component="a"
+          href="https://github.com/noxtimo"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
         >
-          <FaYoutube />
-          <span className="social-label">YouTube</span>
-        </a>
+          <FontAwesomeIcon icon={faYoutube} size="2x" />
+        </Typography>
       </li>
     </ul>
   );

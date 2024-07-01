@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
 const ContactUs = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [stateMessage, setStateMessage] = useState(null);
@@ -60,7 +62,9 @@ const ContactUs = () => {
           <textarea id="message" name="message" required></textarea>
         </div>
         <div className="form-group">
-          <button type="submit">Submit</button>
+          <Button variant="contained" type="submit" endIcon={<SendIcon />}>
+            Send
+          </Button>
         </div>
       </form>
       <ToastContainer />

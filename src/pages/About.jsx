@@ -68,7 +68,7 @@ const About = () => {
           </p>
         </div>
         <div className="social-media-about">
-          <h1>Be sure to check out my social media.</h1>
+          <h1>Feel free to check out my social media.</h1>
           <SocialIcons />
         </div>
       </div>

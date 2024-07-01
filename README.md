@@ -18,3 +18,4 @@ Currently, two official plugins are available:
 - Add login
 - Add stripe
 - Add a better looking contact form
+- Add a course link so users can buy your course

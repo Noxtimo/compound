@@ -37,8 +37,6 @@ const App = () => {
     },
   });
 
-  console.log(toggleDark);
-
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline enableColorScheme />
