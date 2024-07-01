@@ -19,3 +19,6 @@ Currently, two official plugins are available:
 - Add stripe
 - Add a better looking contact form
 - Add a course link so users can buy your course
+- Use flex grow to push the principle so that it looks nicer with the currency
+- Use toggle button to make the currency look nicer
+- Add important settings to the sidebar

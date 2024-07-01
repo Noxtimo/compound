@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import { LineChart } from "@mui/x-charts/LineChart";
+import Stack from "@mui/material/Stack";
 
 const Calculator = () => {
   const [principal, setPrincipal] = useState(5000);
@@ -211,9 +212,10 @@ const Calculator = () => {
         </div>
       </div>
       {time > 0 ? (
-        <div>
+        <Stack direction={{ md: "row", xs: "column" }} sx={{ width: "100%" }}>
           <LineChart
             height={400}
+            sx={{ padding: "5%" }}
             series={[
               { data: [0, ...initialInvestment], label: "Non-Compound" },
               { data: [0, ...compoundInterst], label: "Compound" },
@@ -224,8 +226,14 @@ const Calculator = () => {
                 data: [...generateCountdownArray(parseInt(time) + 1)],
               },
             ]}
+            yAxis={[
+              {
+                valueFormatter: (value) =>
+                  `${(value / 1000).toLocaleString()}k`,
+              },
+            ]}
           />
-        </div>
+        </Stack>
       ) : (
         <div></div>
       )}
