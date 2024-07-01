@@ -5,6 +5,7 @@ import {
   faGoogle,
   faCodepen,
 } from "@fortawesome/free-brands-svg-icons";
+import Typography from "@mui/material/Typography";
 
 const Footer = () => {
   return (
@@ -14,30 +15,66 @@ const Footer = () => {
         rights reserved.
       </p>
       <div className="social-media">
-        <a
+        <Typography
+          component="a"
           href="https://github.com/noxtimo"
-          target="_blank"
-          rel="noopener noreferrer"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
         >
           <FontAwesomeIcon icon={faGithub} size="2x" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/yourprofile"
-          target="_blank"
-          rel="noopener noreferrer"
+        </Typography>
+        <Typography
+          href="https://www.linkedin.com/in/yourprofile "
+          component="a"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
         >
           <FontAwesomeIcon icon={faLinkedin} size="2x" />
-        </a>
-        <a
-          href="mailto:youremail@example.com"
-          target="_blank"
-          rel="noopener noreferrer"
+        </Typography>
+        <Typography
+          href="mailto:youremail@example.com "
+          component="a"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
         >
           <FontAwesomeIcon icon={faGoogle} size="2x" />
-        </a>
-        <a href="https://codepen.io/" target="_blank" rel="noopener noreferrer">
+        </Typography>
+        <Typography
+          href="https://codepen.io/ "
+          component="a"
+          sx={{
+            mr: 2,
+            display: { xs: "none", md: "flex" },
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}
+        >
           <FontAwesomeIcon icon={faCodepen} size="2x" />
-        </a>
+        </Typography>
       </div>
     </footer>
   );

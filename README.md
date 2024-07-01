@@ -17,3 +17,4 @@ Currently, two official plugins are available:
 - Fix bug with chart overflowing
 - Add login
 - Add stripe
+- Add a better looking contact form

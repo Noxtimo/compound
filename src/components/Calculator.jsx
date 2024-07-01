@@ -68,10 +68,13 @@ const Calculator = () => {
   };
 
   return (
-    <>
+    <div
+      className="calculator-container"
+      style={{ backgroundColor: "inherit" }}
+    >
       <h2 className="result">Compound Interest Calculator</h2>
       <div>
-        <div className="input-row">
+        <div className="input-row" style={{ backgroundColor: "inherit" }}>
           <div className="currency-container">
             <input
               className="currency"
@@ -226,7 +229,7 @@ const Calculator = () => {
       ) : (
         <div></div>
       )}
-    </>
+    </div>
   );
 };
 

@@ -10,6 +10,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGear } from "@fortawesome/free-solid-svg-icons";
+import { Height } from "@mui/icons-material";
 
 const TemporaryDrawer = () => {
   const [open, setOpen] = React.useState(false);
@@ -51,7 +54,7 @@ const TemporaryDrawer = () => {
   return (
     <div>
       <Button onClick={toggleDrawer(true)} style={{ color: "white" }}>
-        Account
+        <FontAwesomeIcon icon={faGear} />
       </Button>
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}

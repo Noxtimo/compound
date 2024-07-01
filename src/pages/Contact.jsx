@@ -10,14 +10,10 @@ import ContactUs from "../components/ContactUs";
 
 const Contact = () => {
   return (
-    <div className="container">
-      <Header />
-      <div className="main-body-not-home">
-        <div className="faq-body">
-          <ContactUs />
-        </div>
+    <div className="secondary-body">
+      <div className="faq-body">
+        <ContactUs />
       </div>
-      <Footer />
     </div>
   );
 };

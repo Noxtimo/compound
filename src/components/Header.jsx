@@ -13,11 +13,16 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import SideDraw from "../components/SideDraw";
+import Switch from "@mui/material/Switch";
 const pages = ["About", "Faq", "Contact"];
 const condencedPages = ["Home", "About", "Faq", "Contact"];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function Header() {
+function Header({ toggleDark, settoggleDark }) {
+  // Trigger toggle using onChange Switch
+  const handleModeChange = () => {
+    settoggleDark(!toggleDark);
+  };
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -127,12 +132,18 @@ function Header() {
                   key={page}
                   onClick={handleCloseNavMenu}
                   sx={{ my: 2, color: "white", display: "block" }}
+                  style={{ textAlign: "center" }}
                   href={"/" + page}
                 >
                   {page}
                 </Button>
               ))}
             </Box>
+            <Switch
+              color="default"
+              onChange={handleModeChange}
+              checked={toggleDark}
+            />
             <SideDraw />
 
             {/* This is a profile picture and settings if you want to add authentication later as the website grows.
