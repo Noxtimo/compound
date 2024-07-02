@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import ToggleCurrency from "./ToggleCurrency";
 import { LineChart } from "@mui/x-charts/LineChart";
 import Stack from "@mui/material/Stack";
 
@@ -77,38 +77,7 @@ const Calculator = () => {
       <div>
         <div className="input-row" style={{ backgroundColor: "inherit" }}>
           <div className="currency-container">
-            <input
-              className="currency"
-              type="radio"
-              name="currency"
-              value="$"
-              onChange={handleCurrencyChange}
-            />
-            $
-            <input
-              className="currency"
-              type="radio"
-              name="currency"
-              value="£"
-              onChange={handleCurrencyChange}
-            />
-            £
-            <input
-              className="currency"
-              type="radio"
-              name="currency"
-              value="€"
-              onChange={handleCurrencyChange}
-            />
-            €
-            <input
-              className="currency"
-              type="radio"
-              name="currency"
-              value="¥"
-              onChange={handleCurrencyChange}
-            />
-            ¥
+            <ToggleCurrency setCurrency={setCurrency} />
           </div>
         </div>
         <div className="input-row">

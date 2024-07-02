@@ -13,19 +13,20 @@ const About = () => {
           <p>
             Welcome to my website dedicated to compound interest—a powerful
             concept in finance that can significantly impact your financial
-            growth over time. At [Your Website Name], my mission is to demystify
-            compound interest, empower you with knowledge, and provide practical
-            tools to enhance your financial decision-making.
+            growth over time. My mission is to demystify compound interest,
+            empower you with knowledge, and provide practical tools to enhance
+            your financial decision-making.
           </p>
           <p>
             My intention is to serve as a comprehensive resource for individuals
             at all stages of their financial journey. Whether you're just
             starting to explore savings options, planning for retirement, or
-            looking to optimize your investment strategies, we aim to provide
+            looking to optimize your investment strategies, I aim to provide
             clear explanations and actionable insights.
           </p>
-          <h2>What We Offer:</h2>
-          <ul>
+
+          <ul className="website-offers">
+            <h1>What This Website Offers:</h1>
             <li>
               <strong>Educational Content:</strong> Dive into articles and
               guides that explain the fundamentals of compound interest, its
@@ -60,7 +61,7 @@ const About = () => {
             build long-term wealth.
           </p>
           <p>
-            Thank you for visiting my website. We're dedicated to providing
+            Thank you for visiting my website. I'm dedicated to providing
             valuable resources and insights that empower you to make informed
             financial decisions and secure your financial future. Explore our
             site, engage with my content, and embark on a journey towards

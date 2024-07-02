@@ -7,28 +7,20 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import einstein from "../images/einstain.jpg";
 
-const Einstain = () => {
+const Einstain = ({ image, name, quote, intro }) => {
   return (
-    <Card sx={{ maxWidth: 345 }} style={{ width: "33%", marginLeft: "2%" }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image={einstein}
-        title="Albert Einstein"
-      />
+    <Card sx={{ width: 345 }} style={{ marginLeft: "2%" }}>
+      <CardMedia sx={{ height: 140 }} image={image} title="Albert Einstein" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          Albert Einstein
+          {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Albert Einstein was a theoretical physicist who developed the theory
-          of relativity, one of the two pillars of modern physics. His work is
-          also known for its influence on the philosophy of science.
+          {intro}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
+      <CardActions>{quote}</CardActions>{" "}
+      <Button size="small">Learn More</Button>
     </Card>
   );
 };

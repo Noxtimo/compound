@@ -5,9 +5,25 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import einstain from "../images/einstain.jpg";
 import Einstain from "../components/Einstain";
+import buffet from "../images/buffet.jpeg";
+import gates from "../images/gates.jpeg";
 import Typography from "@mui/material/Typography";
 
 const Home = () => {
+  const famousQuotes = [
+    "Compound interest is the eighth wonder of the world",
+    "Risk comes from not knowing what you are doing.",
+    "To win big, you sometimes need to take big risks.",
+  ];
+
+  const introDuction = [
+    "Albert Einstein was a German-born theoretical physicist who is widely held to be one of the greatest and most influential scientists of all time.",
+    "Warren Buffett is an American businessman, investor, and philanthropist who currently serves as the chairman and CEO of Berkshire Hathaway.",
+    "Bill Gates is an American businessman, investor, philanthropist, and writer best known for co-founding the software company Microsoft with his childhood friend Paul Allen.",
+  ];
+
+  const names = ["Albert Einstain", "Warrent Buffet", "Bill Gates"];
+
   return (
     <div className="main-body">
       <div className="primary-body">
@@ -16,7 +32,7 @@ const Home = () => {
       <div className="secondary-body">
         <div className="readings">
           <Explanation />
-          <div>
+          <div style={{ alignItems: "center" }}>
             {" "}
             <h1>What is compound interest</h1>
             <p>
@@ -74,26 +90,45 @@ const Home = () => {
           <div>
             <h1>Quotes by famous people</h1>
             <div className="quotes">
-              <Einstain />
+              <Einstain
+                image={einstain}
+                name={names[0]}
+                quote={famousQuotes[0]}
+                intro={introDuction[0]}
+              />
 
-              <Einstain />
+              <Einstain
+                image={buffet}
+                name={names[1]}
+                quote={famousQuotes[1]}
+                intro={introDuction[1]}
+              />
 
-              <Einstain />
+              <Einstain
+                image={gates}
+                name={names[2]}
+                quote={famousQuotes[2]}
+                intro={introDuction[2]}
+              />
             </div>
           </div>
-          <div style={{ alignItems: "center" }}>
+          <div
+            style={{
+              alignItems: "center",
+            }}
+          >
             <Typography
               href="mailto:youremail@example.com "
               component="a"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
+              className="important-links"
             >
               Links to important sites
             </Typography>
@@ -102,13 +137,14 @@ const Home = () => {
               component="a"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
+              className="important-links"
             >
               Links to important sites
             </Typography>
@@ -117,13 +153,14 @@ const Home = () => {
               component="a"
               sx={{
                 mr: 2,
-                display: { xs: "none", md: "flex" },
+
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
+              className="important-links"
             >
               Links to important sites
             </Typography>
