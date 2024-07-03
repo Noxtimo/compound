@@ -112,7 +112,8 @@ const Home = () => {
               />
             </div>
           </div>
-          <div
+          {/* You can add this later but for now I will just keep it out */}
+          {/* <div
             style={{
               alignItems: "center",
             }}
@@ -164,7 +165,7 @@ const Home = () => {
             >
               Links to important sites
             </Typography>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

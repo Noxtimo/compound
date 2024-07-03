@@ -20,3 +20,9 @@ Currently, two official plugins are available:
 - Add a better looking contact form
 - Add a course link so users can buy your course
 - Use flex grow to push the principle so that it looks nicer with the currency
+
+# Important
+
+For any future reference, when deploying react vite to firebase remember that build is dist in vite
+
+# Important

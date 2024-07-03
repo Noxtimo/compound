@@ -15,13 +15,13 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { useLocalStorage } from "@uidotdev/usehooks";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA60gK40_iYLlziZso8i2n4QJLQfZgFEJ4",
-  authDomain: "compound-a0de2.firebaseapp.com",
-  projectId: "compound-a0de2",
-  storageBucket: "compound-a0de2.appspot.com",
-  messagingSenderId: "788396911868",
-  appId: "1:788396911868:web:c441da14cf52dd4dba7b79",
-  measurementId: "G-0MW9W8TVZ6",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGE_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
@@ -44,10 +44,10 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="home" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="faq" element={<Faq />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
