@@ -13,16 +13,13 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
-import Switch from "@mui/material/Switch";
 const pages = ["About", "Faq", "Contact"];
 const condencedPages = ["Home", "About", "Faq", "Contact"];
+import Dialogue from "./Dialogue";
+
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function Header({ toggleDark, settoggleDark }) {
-  // Trigger toggle using onChange Switch
-  const handleModeChange = () => {
-    settoggleDark(!toggleDark);
-  };
+function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -107,25 +104,7 @@ function Header({ toggleDark, settoggleDark }) {
                 ))}
               </Menu>
             </Box>
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="/"
-              sx={{
-                mr: 2,
-                display: { xs: "flex", md: "none" },
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color: "inherit",
-                textDecoration: "none",
-              }}
-            >
-              HOME
-            </Typography>
+
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Button
@@ -139,11 +118,6 @@ function Header({ toggleDark, settoggleDark }) {
                 </Button>
               ))}
             </Box>
-            <Switch
-              color="default"
-              onChange={handleModeChange}
-              checked={toggleDark}
-            />
 
             {/* This is a profile picture and settings if you want to add authentication later as the website grows.
               
@@ -181,6 +155,8 @@ function Header({ toggleDark, settoggleDark }) {
               </Menu>
             </Box> */}
           </Toolbar>
+
+          <Dialogue />
         </Container>
       </AppBar>
     </div>

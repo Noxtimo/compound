@@ -158,7 +158,7 @@ const Calculator = () => {
         <div className="input-row"></div>
 
         <div className="result">
-          <h2>Total Interest Earned: </h2>
+          <h2>Aggregate Interest: </h2>
 
           <h2 style={{ color: "green" }}>
             <span style={{ marginRight: "3%" }}>{currency}</span>
@@ -180,32 +180,6 @@ const Calculator = () => {
           </h2>
         </div>
       </div>
-      {time > 0 ? (
-        <Stack direction={{ md: "row", xs: "column" }} sx={{ width: "100%" }}>
-          <LineChart
-            height={400}
-            sx={{ padding: "5%" }}
-            series={[
-              { data: [0, ...initialInvestment], label: "Non-Compound" },
-              { data: [0, ...compoundInterst], label: "Compound" },
-            ]}
-            xAxis={[
-              {
-                scaleType: "point",
-                data: [...generateCountdownArray(parseInt(time) + 1)],
-              },
-            ]}
-            yAxis={[
-              {
-                valueFormatter: (value) =>
-                  `${(value / 1000).toLocaleString()}k`,
-              },
-            ]}
-          />
-        </Stack>
-      ) : (
-        <div></div>
-      )}
     </div>
   );
 };

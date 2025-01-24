@@ -88,7 +88,7 @@ const Home = () => {
             </label>
           </div>
           <div>
-            <h1>Quotes by famous people</h1>
+            <h2>Quotes by famous people</h2>
             <div className="quotes">
               <Einstain
                 image={einstain}
