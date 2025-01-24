@@ -26,3 +26,7 @@ Currently, two official plugins are available:
 For any future reference, when deploying react vite to firebase remember that build is dist in vite
 
 # Important
+
+- It seems my understanding of basic javascript and react is showing when it comes to using more advanced syntax.
+- My next task is to simply enable the dark mode buttom from the dialogue box and also add a google login button in there,
+- to give more settings when logged in
